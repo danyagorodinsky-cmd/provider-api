@@ -10,3 +10,4 @@
 ## Ендпоінти
 - GET /api/tariffs
 - GET /api/tariffs/{id}
+- GET /api/tariffs?max_price=300
