@@ -22,9 +22,18 @@ function jsonResponse(Response $response, $data, int $status = 200): Response
         ->withStatus($status);
 }
 
-// Усі тарифи
+// Усі тарифи (з необов'язковим фільтром ?max_price=300)
 $app->get('/api/tariffs', function (Request $request, Response $response) {
-    return jsonResponse($response, loadTariffs());
+    $tariffs = loadTariffs();
+    $params = $request->getQueryParams();
+
+    if (isset($params['max_price'])) {
+        $tariffs = array_values(array_filter($tariffs, function ($t) use ($params) {
+            return $t['price_uah'] <= (int)$params['max_price'];
+        }));
+    }
+
+    return jsonResponse($response, $tariffs);
 });
 
 // Тариф за id
