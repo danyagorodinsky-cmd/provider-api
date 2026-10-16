@@ -1,0 +1,5 @@
+[
+  {"id": 1, "name": "Старт", "speed_mbps": 100, "price_uah": 200, "tv": false},
+  {"id": 2, "name": "Оптимальний", "speed_mbps": 300, "price_uah": 280, "tv": true},
+  {"id": 3, "name": "Максимум", "speed_mbps": 1000, "price_uah": 400, "tv": true}
+]

@@ -1,0 +1,7 @@
+{
+    "name": "danya/provider-api",
+    "require": {
+        "slim/slim": "*",
+        "slim/psr7": "*"
+    }
+}
